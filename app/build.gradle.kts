@@ -4,6 +4,13 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+repositories {
+    google()
+    mavenCentral() // これがあることを確認
+    // もしJitPackを使用している場合は、以下も追加
+    // maven { url 'https://jitpack.io' }
+}
+
 android {
     namespace = "com.example.calendarapp"
     compileSdk = 35
@@ -56,4 +63,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("com.kizitonwose.calendar:compose:2.7.0")
 }
